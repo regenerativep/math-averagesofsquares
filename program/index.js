@@ -1,4 +1,6 @@
-const FS = require("fs");
+//require("./primes.js");
+require("./triangles.js");
+/*const FS = require("fs");
 var squarelist = [];
 function testSquare(n) //test if given number is a perfect square
 {
@@ -11,7 +13,7 @@ function testSquare(n) //test if given number is a perfect square
     }
     return -1;
 }
-var times = 5000;
+var times = 1000;
 for(var i = 1; i <= times; i++)
 {
     var a = i * i;
@@ -22,7 +24,7 @@ for(var i = 1; i <= times; i++)
         var sqr = testSquare((a + b) / 2);
         if(sqr > 0)
         {
-            var out = i + "/ " + times + ", " + j + " / " + i + ": " + a + " " + b + " -> " + squarelist[sqr];
+            var out = "(" + i + ", " + j + "): " + a + " " + b + " -> " + squarelist[sqr];
             console.log(out);
             FS.appendFile("results.txt", out + "\n", function(err)
             {
@@ -33,4 +35,4 @@ for(var i = 1; i <= times; i++)
             });
         }
     }
-}
+}*/
