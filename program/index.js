@@ -1,6 +1,6 @@
 //require("./primes.js");
-require("./triangles.js");
-/*const FS = require("fs");
+//require("./triangles.js");
+const FS = require("fs");
 var squarelist = [];
 function testSquare(n) //test if given number is a perfect square
 {
@@ -35,4 +35,4 @@ for(var i = 1; i <= times; i++)
             });
         }
     }
-}*/
+}
