@@ -12,8 +12,8 @@ function testSquare(n) //test if given number is a perfect square
     }
     return -1;
 }
-var times = 1000;
-for(var i = 1; i <= times; i++)
+var times = 700;
+for(var i = 1; i < times; i++)
 {
     var a = i * i;
     squarelist.push(a);
@@ -23,7 +23,7 @@ for(var i = 1; i <= times; i++)
         for(var k = 0; k < j; k++)
         {
             var c = k * k;
-            var sqr = testSquare((a + b + k) / 3);
+            var sqr = testSquare((a + b + c) / 3);
             if(sqr > 0)
             {
                 var out = "(" + i + ", " + j + ", " + k + "): " + a + " " + b + " " + c + " -> " + squarelist[sqr];
