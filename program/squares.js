@@ -11,7 +11,8 @@ function testSquare(n) //test if given number is a perfect square
     }
     return -1;
 }
-var times = 1000;
+var times = 10000;
+var str = ""; //file output
 for(var i = 1; i <= times; i++)
 {
     var a = i * i;
@@ -24,13 +25,15 @@ for(var i = 1; i <= times; i++)
         {
             var out = "(" + i + ", " + j + "): " + a + " " + b + " -> " + squarelist[sqr];
             console.log(out);
-            FS.appendFile("results.txt", out + "\n", function(err)
-            {
-                if(err)
-                {
-                    console.log("failed to write " + i + ", " + j); 
-                }
-            });
+            str += out + "\n";
+            
         }
     }
 }
+FS.appendFile("results.txt", str + "\n", function(err)
+{
+    if(err)
+    {
+        console.log("failed to write " + i + ", " + j); 
+    }
+});
