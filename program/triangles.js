@@ -62,7 +62,7 @@ FS.readFile("./triangles.txt", "utf8", function(err, data)
     {
         console.log(copiedlist[i]);
     }
-    FS.appendFile("results.txt",str, function(err)
+    FS.appendFile("results_triangle.txt",str, function(err)
     {
         if(err)
         {
