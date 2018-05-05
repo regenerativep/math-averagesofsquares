@@ -1,7 +1,7 @@
 //use 3 factors for the average function here instead of 2
 const FS = require("fs");
 var squarelist = [];
-var numberOfValues = 6;
+var numberOfValues = 3;
 function testSquare(n) //test if given number is a perfect square
 {
     for(var i = 0; i < squarelist.length; i++)
@@ -60,7 +60,7 @@ function writeToFile(list)
         readyToWrite = true;
     });
 }
-var times = 80;
+var times = 100;
 for(var i = 1; i <= times; i++)
 {
     var a = i * i;
@@ -68,7 +68,7 @@ for(var i = 1; i <= times; i++)
 
     var nextLevel = function(level, arr)
     {
-        for(var j = 0; j < arr[arr.length - 1]; j++)
+        for(var j = 1; j <= arr[arr.length - 1]; j++)
         {
             var temparr = arr.slice(0, arr.length);
             temparr.push(j)
@@ -86,12 +86,27 @@ for(var i = 1; i <= times; i++)
                 //we'll also make a list of the square numbers while we're here
                 var avg = 0;
                 var sqrlist = [];
+                var lastnum = temparr[0];
+                var changed = false;
                 for(var k = 0; k < temparr.length; k++)
                 {
                     var val = temparr[k];
+                    if(!changed)
+                    {
+                        if(val != lastnum)
+                        {
+                            changed = true;
+                        }
+                    }
+                    lastnum = val;
                     val *= val;
                     avg += val;
                     sqrlist.push(val);
+                }
+                if(!changed)
+                {
+                    //nothing changed; get out; we dont want this one
+                    continue;
                 }
                 avg /= temparr.length;
                 //we have the average now
